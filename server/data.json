@@ -1,0 +1,34 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Hydrating Face Cream",
+      "price": 150,
+      "quantity": 100
+    },
+    {
+      "id": "2",
+      "name": "Revitalizing Eye Serum",
+      "price": 120,
+      "quantity": 50
+    },
+    {
+      "id": "3",
+      "name": "Anti-Aging Night Cream",
+      "price": 200,
+      "quantity": 80
+    },
+    {
+      "id": "4",
+      "name": "Brightening Vitamin C Serum",
+      "price": 180,
+      "quantity": 60
+    },
+    {
+      "id": "6064",
+      "name": "SPF 50 Sunscreen Lotion",
+      "price": 800,
+      "quantity": 50
+    }
+  ]
+}

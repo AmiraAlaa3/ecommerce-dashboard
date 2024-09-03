@@ -1,0 +1,31 @@
+<div class="container my-5">
+  <h1 class="display-5 my-4">All Products</h1>
+  <table class="table table-striped border-2">
+    <thead>
+      <tr class="table-dark">
+        <th scope="col">ID</th>
+        <th scope="col">Product Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (product of products; track product.id) {
+        <tr>
+          <th scope="row">{{product.id}}</th>
+          <td>{{product.name}}</td>
+          <td>{{ product.price | currency }}</td>
+          <td>{{ product.quantity }}</td>
+          <td>
+            <button  [routerLink]="['/products', product.id]" type="button" class="btn btn-info mx-1">View</button>
+            <button [routerLink]="['/products', product.id, 'edit']"  type="button" class="btn btn-primary mx-1">Edit</button>
+            <button    (click)="deleteProduct(product.id)" type="button" class="btn btn-danger mx-1">Delete</button>
+          </td>
+        </tr>
+      }
+
+    </tbody>
+  </table>
+
+</div>

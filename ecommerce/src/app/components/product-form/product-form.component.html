@@ -1,0 +1,67 @@
+<div class="container  my-5">
+  <h1 class="display-5 my-4 text-center">
+    {{ productId == 0 ? "Add New Product" : "Edit Product" }}
+  </h1>
+  <form (submit)="productHandler($event)" [formGroup]="productForm"
+    class="w-50 m-auto p-5 rounded-2 shadow">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Product Name</label>
+      <input
+        type="text"
+        formControlName="name"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Enter Product Name" />
+      @if(getName.touched){
+      <ng-container>
+        @if(getName.hasError('required')){
+        <div id="emailHelp" class="form-text text-danger">
+          Product Name is Required
+        </div>
+        } @if(getName.hasError('minlength')){
+        <div id="emailHelp" class="form-text text-danger">
+          Product Name length must be greater than 3
+        </div>
+        }
+      </ng-container>
+      }
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Price</label>
+      <input
+        type="number"
+        class="form-control"
+        formControlName="price"
+        id="exampleInputPassword1"
+        placeholder="Enter Product Price" />
+      @if(getPrice.touched){
+      <ng-container>
+        @if(getPrice.hasError('required')){
+        <div id="emailHelp" class="form-text text-danger">Price is
+          Required</div>
+        }
+      </ng-container>
+      }
+    </div>
+    <div class="mb-3">
+      <label for="productQuantity" class="form-label">Quantity</label>
+      <input
+        type="number"
+        class="form-control"
+        id="productQuantity"
+        formControlName="quantity"
+        placeholder="Enter Product Quantity" />
+      @if(getQuantity.touched){ @if(getQuantity.hasError('required')){
+      <div id="emailHelp" class="form-text text-danger">
+        Quantity is Required
+      </div>
+
+      } }
+    </div>
+
+    <button type="submit" class="btn btn-success my-3">
+      {{ productId == 0 ? "Add New Product" : "Edit Product" }}
+    </button>
+  </form>
+</div>
